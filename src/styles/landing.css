@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;600;700&display=swap');
+
+:root {
+  --phant-bg: #050508;
+  --phant-bg-soft: #0a0a0f;
+  --phant-bg-panel: #0c0c14;
+  --phant-bg-line: #1f1f28;
+  --phant-border: #2a2a35;
+  --phant-text: #a1a1aa;
+  --phant-muted: #626270;
+  --phant-white: #ffffff;
+  --phant-purple: #c084fc;
+  --phant-pink: #f472b6;
+  --phant-green: #22c55e;
+  --phant-black: #050508;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--phant-bg);
+  color: var(--phant-text);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+::selection {
+  background-color: #f472b6;
+  color: #000;
+}
+
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-size: 30px 30px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+@media (max-width: 760px) {
+  .wrap {
+    width: min(1280px, calc(100% - 28px));
+  }
+}

@@ -1,19 +1,22 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+	site: process.env.SITE_URL ?? 'http://localhost:4321',
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: 'Phant Docs',
+			customCss: ['./src/styles/tailwind.css'],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/phant-app/phant' }],
 			sidebar: [
 				{
 					label: 'Guides',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ label: 'Quickstart on Linux', slug: 'guides/example' },
 					],
 				},
 				{
@@ -23,4 +26,7 @@ export default defineConfig({
 			],
 		}),
 	],
+	vite: {
+		plugins: [tailwindcss()],
+	},
 });

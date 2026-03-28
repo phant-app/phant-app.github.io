@@ -1,0 +1,29 @@
+---
+import '../styles/tailwind.css';
+import '../styles/landing.css';
+import Nav from '../components/landing/Nav.astro';
+import Hero from '../components/landing/Hero.astro';
+import Features from '../components/landing/Features.astro';
+import Roadmap from '../components/landing/Roadmap.astro';
+import Pricing from '../components/landing/Pricing.astro';
+import Author from '../components/landing/Author.astro';
+import Footer from '../components/landing/Footer.astro';
+---
+
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phant | Local PHP & Laravel Dev Toolkit for Linux</title>
+  </head>
+  <body>
+    <div class="grid-bg"></div>
+    <Nav />
+    <Hero />
+    <Features />
+    <Roadmap />
+    <Pricing />
+    <Author />
+    <Footer />
+  </body>
+</html>
