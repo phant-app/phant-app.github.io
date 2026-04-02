@@ -4,104 +4,112 @@ import phpManagerImage from "../../assets/php-manager.png";
 import sitesImage from "../../assets/sites.png";
 import dumpsImage from "../../assets/dumps.png";
 import servicesImage from "../../assets/services.png";
+
+const capabilities = [
+  {
+    key: "php",
+    title: "PHP Manager",
+    subtitle: "Runtime Switcher",
+    description:
+      "Switch PHP versions with confidence per project. Keep CLI/runtime context visible so teams avoid version drift.",
+    bullets: [
+      "See installed versions and current active runtime instantly.",
+      "Switch quickly for each project workflow.",
+      "Reduce environment mismatch before debugging starts.",
+    ],
+    image: phpManagerImage,
+    alt: "Phant PHP manager screen showing installed versions and switch actions",
+  },
+  {
+    key: "sites",
+    title: "Sites",
+    subtitle: "Valet Integration",
+    description:
+      "Manage linked and parked local domains in one place. Keep domain, PHP version, and SSL context easy to verify.",
+    bullets: [
+      "Track linked and parked projects at a glance.",
+      "See assigned PHP versions for each local domain.",
+      "Reduce context switching between terminal and browser.",
+    ],
+    image: sitesImage,
+    alt: "Phant Sites screen listing local projects, URLs, and PHP versions",
+  },
+  {
+    key: "dumps",
+    title: "Dumps",
+    subtitle: "Live Inspector",
+    description:
+      "Capture dump() and dd() output in real-time in a native panel, so data inspection stays focused and readable.",
+    bullets: [
+      "Structured output rendered in an app-native view.",
+      "No need to hunt through browser responses.",
+      "Built for fast iteration while coding.",
+    ],
+    image: dumpsImage,
+    alt: "Phant Dumps screen showing live dump and dd output",
+  },
+  {
+    key: "services",
+    title: "Services",
+    subtitle: "Daemon State",
+    description:
+      "Confirm local service health instantly for queues, databases, and cache layers so your environment matches your intent.",
+    bullets: [
+      "See service status in one unified panel.",
+      "Validate ports and units quickly.",
+      "Avoid silent local infra issues during development.",
+    ],
+    image: servicesImage,
+    alt: "Phant Services screen with local daemon status cards",
+  },
+];
 ---
 
 <section id="features" class="py-24">
   <div class="wrap">
-    <div class="mb-11 flex items-baseline gap-3.5 border-b border-[var(--phant-border)] pb-3.5">
+    <div class="mb-11 flex flex-wrap items-baseline gap-3.5 border-b border-[var(--phant-border)] pb-3.5">
       <h2 class="m-0 text-[clamp(1.7rem,5vw,2.4rem)] uppercase tracking-[-0.01em] text-[var(--phant-white)]">
         Capability <span class="text-[var(--phant-purple)] drop-shadow-[0_0_15px_rgba(139,92,246,0.4)]">Matrix</span>
       </h2>
       <small class="font-['JetBrains_Mono'] text-[0.65rem] uppercase tracking-[0.14em] text-[var(--phant-text)]">
-        Core systems offline
+        Product Storyboard
       </small>
     </div>
 
-    <div class="grid grid-cols-1 gap-4 min-[761px]:grid-cols-2">
-      <article class="flex min-h-full flex-col overflow-hidden rounded-lg border border-[var(--phant-border)] bg-[var(--phant-bg-soft)]">
-        <div class="flex items-center justify-between gap-2.5 border-b border-[var(--phant-border)] bg-[#0d0d14] px-4 py-3 font-['JetBrains_Mono'] text-[0.72rem]">
-          <span class="font-bold text-[var(--phant-purple)]">&gt; _ PHP MANAGER</span>
-          <span class="text-right text-[0.6rem] uppercase tracking-[0.08em] text-[var(--phant-muted)]">runtime switcher</span>
-        </div>
-        <div class="flex h-full flex-col p-[18px]">
-          <div class="mb-4 overflow-hidden rounded-md border border-[var(--phant-border)] bg-[#090912]">
-            <Image src={phpManagerImage} alt="Phant PHP Manager screen" class="h-auto w-full" />
-          </div>
-          <p class="mb-4 text-[0.96rem] leading-[1.7]">
-            Move between PHP versions with confidence per project. Validate active runtime instantly and reduce
-            environment drift before it turns into team-wide debugging noise.
-          </p>
-          <div class="mt-auto rounded-md border border-[var(--phant-border)] bg-black/40 p-2.5 font-['JetBrains_Mono'] text-[0.74rem] leading-[1.6] text-[var(--phant-muted)]">
-            <div class="flex justify-between"><span>Current</span><span class="text-[var(--phant-purple)]">PHP 8.4</span></div>
-            <div class="flex justify-between"><span>Project API</span><span class="text-[var(--phant-text)]">8.3 pinned</span></div>
-          </div>
-        </div>
-      </article>
+    <div class="space-y-8 min-[980px]:space-y-10">
+      {
+        capabilities.map((capability, index) => (
+          <article class="group grid overflow-hidden rounded-xl border border-[var(--phant-border)] bg-[var(--phant-bg-soft)] shadow-[0_18px_45px_rgba(0,0,0,0.28)] min-[980px]:grid-cols-2">
+            <div
+              class:list={[
+                "relative overflow-hidden border-b border-[var(--phant-border)] bg-[#06060d] min-[980px]:border-b-0",
+                index < 2 ? "min-[980px]:order-2 min-[980px]:border-l" : "min-[980px]:order-1 min-[980px]:border-r",
+              ]}
+            >
+              <Image
+                src={capability.image}
+                alt={capability.alt}
+                class="h-[250px] w-full object-cover bg-[#05050a] p-2 transition duration-500 group-hover:scale-110 min-[980px]:h-[320px]"
+              />
+              <div class="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#06060d] to-transparent"></div>
+            </div>
+            <div class:list={["flex h-full flex-col p-6 min-[980px]:p-8", index < 2 ? "min-[980px]:order-1" : "min-[980px]:order-2"]}>
+              <div class="mb-3 flex items-start justify-between gap-3">
+                <h3 class="m-0 text-[1.55rem] font-extrabold uppercase tracking-[-0.01em] text-[var(--phant-white)] min-[980px]:text-[1.75rem]">{capability.title}</h3>
+                <span class="rounded border border-[#3a2f56] bg-[#151025] px-2 py-1 font-['JetBrains_Mono'] text-[0.6rem] uppercase tracking-[0.1em] text-violet-300">
+                  {capability.subtitle}
+                </span>
+              </div>
 
-      <article class="flex min-h-full flex-col overflow-hidden rounded-lg border border-[var(--phant-border)] bg-[var(--phant-bg-soft)]">
-        <div class="flex items-center justify-between gap-2.5 border-b border-[var(--phant-border)] bg-[#0d0d14] px-4 py-3 font-['JetBrains_Mono'] text-[0.72rem]">
-          <span class="font-bold text-[var(--phant-purple)]">&gt; _ SITES</span>
-          <span class="text-right text-[0.6rem] uppercase tracking-[0.08em] text-[var(--phant-muted)]">cpriego/valet-linux</span>
-        </div>
-        <div class="flex h-full flex-col p-[18px]">
-          <div class="mb-4 overflow-hidden rounded-md border border-[var(--phant-border)] bg-[#090912]">
-            <Image src={sitesImage} alt="Phant Sites screen with linked and parked local domains" class="h-auto w-full" />
-          </div>
-          <p class="mb-4 text-[0.96rem] leading-[1.7]">
-            Track linked and parked projects in one place. Switch PHP versions per app, assign local TLS, and keep
-            runtime context visible without bouncing between shell scripts.
-          </p>
-          <div class="mt-auto rounded-md border border-[var(--phant-border)] bg-black/40 p-2.5 font-['JetBrains_Mono'] text-[0.74rem] leading-[1.6] text-[var(--phant-muted)]">
-            <div class="flex justify-between"><span>phant.test</span><span class="text-[var(--phant-purple)]">8.4</span></div>
-            <div class="flex justify-between"><span>app.test</span><span class="text-[var(--phant-purple)]">8.3</span></div>
-          </div>
-        </div>
-      </article>
+              <p class="mb-4 text-[0.96rem] leading-[1.7] text-[var(--phant-text)]">{capability.description}</p>
 
-      <article class="flex min-h-full flex-col overflow-hidden rounded-lg border border-[var(--phant-border)] bg-[var(--phant-bg-soft)]">
-        <div class="flex items-center justify-between gap-2.5 border-b border-[var(--phant-border)] bg-[#0d0d14] px-4 py-3 font-['JetBrains_Mono'] text-[0.72rem]">
-          <span class="font-bold text-[var(--phant-purple)]">&gt; _ DUMPS</span>
-          <span class="text-right text-[0.6rem] uppercase tracking-[0.08em] text-[var(--phant-muted)]">prepend hook render</span>
-        </div>
-        <div class="flex h-full flex-col p-[18px]">
-          <div class="mb-4 overflow-hidden rounded-md border border-[var(--phant-border)] bg-[#090912]">
-            <Image src={dumpsImage} alt="Phant Dumps screen displaying dump and dd output" class="h-auto w-full" />
-          </div>
-          <p class="mb-4 text-[0.96rem] leading-[1.7]">
-            Capture dump() and dd() output live through prepend hooks. Inspect structured payloads in a native panel
-            instead of hunting through browser responses.
-          </p>
-          <div class="mt-auto rounded-md border border-[var(--phant-border)] bg-black p-2.5 font-['JetBrains_Mono'] text-[0.74rem] leading-[1.6] text-[var(--phant-muted)]">
-            <span class="text-sky-400">App\Models\User</span> <span class="text-white">#2136</span><br />
-            <span class="text-[var(--phant-text)]">#table:</span> <span class="text-amber-500">"users"</span><br />
-            <span class="text-[var(--phant-text)]">+exists:</span> <span class="text-[var(--phant-purple)]">true</span><br />
-            <span class="text-white">}</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="flex min-h-full flex-col overflow-hidden rounded-lg border border-[var(--phant-border)] bg-[var(--phant-bg-soft)]">
-        <div class="flex items-center justify-between gap-2.5 border-b border-[var(--phant-border)] bg-[#0d0d14] px-4 py-3 font-['JetBrains_Mono'] text-[0.72rem]">
-          <span class="font-bold text-[var(--phant-purple)]">&gt; _ SERVICES</span>
-          <span class="text-right text-[0.6rem] uppercase tracking-[0.08em] text-[var(--phant-muted)]">daemon state</span>
-        </div>
-        <div class="flex h-full flex-col p-[18px]">
-          <div class="mb-4 overflow-hidden rounded-md border border-[var(--phant-border)] bg-[#090912]">
-            <Image src={servicesImage} alt="Phant Services screen with local service status" class="h-auto w-full" />
-          </div>
-          <p class="mb-4 text-[0.96rem] leading-[1.7]">
-            See service state at a glance. Confirm queues, databases, and cache backends instantly, so your local
-            stack matches the environment you think is running.
-          </p>
-          <div class="mt-auto flex flex-wrap gap-1.5 rounded-md border border-[var(--phant-border)] bg-black/40 p-2.5 font-['JetBrains_Mono'] text-[0.74rem] leading-[1.6] text-[var(--phant-muted)]">
-            <span class="border border-green-900 bg-green-950 px-1.5 py-[3px] text-[10px] uppercase text-green-500">Valkey / :6379</span>
-            <span class="border border-red-900 bg-red-950 px-1.5 py-[3px] text-[10px] uppercase text-red-500">MariaDB / Null</span>
-            <span class="border border-[var(--phant-border)] bg-[var(--phant-black)] px-1.5 py-[3px] text-[10px] uppercase text-[var(--phant-text)]">Postgres</span>
-            <span class="border border-[var(--phant-border)] bg-[var(--phant-black)] px-1.5 py-[3px] text-[10px] uppercase text-[var(--phant-text)]">Redis</span>
-            <span class="border border-[var(--phant-border)] bg-[var(--phant-black)] px-1.5 py-[3px] text-[10px] uppercase text-[var(--phant-text)]">MySQL</span>
-          </div>
-        </div>
-      </article>
+              <ul class="m-0 list-disc space-y-1.5 pl-5 text-[0.9rem] leading-[1.65] text-[#b8b8c8]">
+                {capability.bullets.map((bullet) => <li>{bullet}</li>)}
+              </ul>
+            </div>
+          </article>
+        ))
+      }
     </div>
   </div>
 </section>
