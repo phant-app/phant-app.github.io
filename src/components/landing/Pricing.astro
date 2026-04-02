@@ -1,38 +1,54 @@
 <section id="get-app" class="py-24">
   <div class="wrap">
-    <div class="mx-auto grid w-full max-w-[1100px] grid-cols-1 gap-3.5 shadow-[0_20px_60px_rgba(0,0,0,0.5)] min-[901px]:grid-cols-2 min-[901px]:gap-0">
+    <div class="mx-auto grid w-full max-w-[1100px] grid-cols-1 gap-3.5 shadow-[0_20px_60px_rgba(0,0,0,0.5)] min-[901px]:grid-cols-[0.95fr_1.05fr] min-[901px]:gap-0">
       <article class="flex flex-col gap-3.5 rounded-[10px] border border-[var(--phant-border)] bg-[var(--phant-bg-panel)] p-[38px] min-[901px]:rounded-r-none min-[901px]:border-r-0">
-        <span class="inline-block w-fit border border-[#3e3e4a] bg-[#1f1f28] px-2 py-1 font-['JetBrains_Mono'] text-[0.65rem] uppercase tracking-[0.12em] text-[var(--phant-white)]">
-          MIT Licensed
-        </span>
         <h3 class="m-0 text-[2rem] uppercase tracking-[-0.02em] text-white">Inspect It.</h3>
         <p class="leading-[1.7]">
-          The full source is open, auditable, and MIT licensed. Review it freely, and if your team prefers full
-          control, compile and package it on your own Linux workflow.
+          Want full visibility before you buy binaries? Explore the source and understand exactly how Phant works for
+          your local PHP and Laravel workflow.
         </p>
-        <div class="mt-auto border-t border-[var(--phant-bg-line)] pt-3.5 font-['JetBrains_Mono'] text-[var(--phant-pink)]">
-          git clone git@github.com:phant-app/phant.git
-        </div>
+        <ul class="m-0 list-disc space-y-1.5 pl-5 text-sm leading-[1.6] text-[#b5b5c4]">
+          <li>Read and audit the full source code.</li>
+          <li>Build and test locally on your own machine.</li>
+          <li>Source-available under BSL 1.1 terms.</li>
+        </ul>
+        <a
+          href="https://github.com/phant-app/phant"
+          target="_blank"
+          rel="noreferrer"
+          class="mt-auto inline-flex w-full items-center justify-between rounded-md border border-[var(--phant-border)] bg-[#0a0a0f] px-4 py-[10px] font-['JetBrains_Mono'] text-[0.7rem] uppercase tracking-[0.1em] text-white no-underline transition hover:border-violet-500"
+        >
+          View Source Code <span class="text-violet-500">-&gt;</span>
+        </a>
       </article>
 
-      <article class="relative flex translate-y-0 flex-col gap-3.5 rounded-[10px] border border-[var(--phant-border)] bg-white p-[38px] text-[#17171f] before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-[#8b5cf6] before:to-[#f472b6] min-[901px]:translate-y-[-10px] min-[901px]:rounded-l-none">
-        <h3 class="m-0 text-[2rem] uppercase tracking-[-0.02em] text-[var(--phant-black)]">Execute It.</h3>
+      <article class="relative flex flex-col gap-3.5 rounded-[10px] border border-[var(--phant-border)] bg-white p-[38px] text-[#17171f] before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-violet-500 before:to-violet-400 min-[901px]:rounded-l-none">
+        <h3 class="m-0 text-[2rem] uppercase tracking-[-0.02em] text-(--phant-black)">Execute It.</h3>
         <div class="flex items-baseline gap-2">
           <strong class="text-[2.5rem] leading-none">$9.99</strong>
           <span class="font-['JetBrains_Mono'] text-xs uppercase text-[var(--phant-muted)]">/ one-time setup</span>
         </div>
         <p class="leading-[1.7] text-[#4c4c5a]">
-          Support active development with ready-to-run binaries. Install in minutes, skip local packaging work, and
-          start building immediately.
+          Support active development with ready-to-run local binaries and faster onboarding.
         </p>
+        <ul class="m-0 list-disc space-y-1.5 pl-5 text-sm leading-[1.6] text-[#4c4c5a]">
+          <li>No local packaging or compilation required.</li>
+          <li>Faster setup across projects and teams.</li>
+          <li>Direct support for ongoing maintenance and updates.</li>
+        </ul>
+        <div class="mt-auto space-y-2">
         <a
           href="https://github.com/phant-app/phant/releases"
           target="_blank"
           rel="noreferrer"
-          class="mt-auto inline-flex w-full items-center justify-between rounded-md border border-[var(--phant-border)] bg-[#0a0a0f] px-4 py-[10px] font-['JetBrains_Mono'] text-[0.7rem] uppercase tracking-[0.1em] text-white no-underline transition hover:border-[var(--phant-purple)]"
+          class="inline-flex w-full items-center justify-between rounded-md border border-[var(--phant-border)] bg-[#0a0a0f] px-4 py-[10px] font-['JetBrains_Mono'] text-[0.7rem] uppercase tracking-[0.1em] text-white no-underline transition hover:border-(--phant-purple)"
         >
           Download Releases <span class="text-[var(--phant-purple)]">-&gt;</span>
         </a>
+          <p class="rounded-md border border-[#f3c77a] bg-[#fff8e8] px-3 py-2 font-['JetBrains_Mono'] text-[0.68rem] uppercase tracking-[0.08em] text-[#8a5a00]">
+            OS availability: Linux (current)
+          </p>
+        </div>
       </article>
     </div>
   </div>

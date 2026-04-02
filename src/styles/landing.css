@@ -56,6 +56,25 @@ body {
   margin: 0 auto;
 }
 
+@keyframes phantLinuxPalette {
+  0% { color: var(--phant-text); }
+  25% { color: var(--phant-purple); }
+  50% { color: var(--phant-pink); }
+  75% { color: var(--phant-green); }
+  100% { color: var(--phant-text); }
+}
+
+.phant-linux-icon {
+  color: var(--phant-text);
+  animation: phantLinuxPalette 4.2s ease-in-out infinite;
+  transition: color 200ms ease;
+}
+
+.phant-linux-icon:hover {
+  color: var(--phant-white);
+  animation-play-state: paused;
+}
+
 @media (max-width: 760px) {
   .wrap {
     width: min(1280px, calc(100% - 28px));
