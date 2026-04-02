@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;600;700;800&display=swap');
+
+:root,
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #241338;
+  --sl-color-accent: #8b5cf6;
+  --sl-color-accent-high: #c4b5fd;
+
+  --sl-color-white: #f5f4ff;
+  --sl-color-gray-1: #e6e4f3;
+  --sl-color-gray-2: #c7c4dc;
+  --sl-color-gray-3: #a29fbe;
+  --sl-color-gray-4: #77739a;
+  --sl-color-gray-5: #312d48;
+  --sl-color-gray-6: #191726;
+  --sl-color-gray-7: #0d0c16;
+  --sl-color-black: #06060d;
+
+  --sl-color-bg: #06060d;
+  --sl-color-bg-nav: rgba(11, 11, 19, 0.9);
+  --sl-color-bg-sidebar: rgba(12, 12, 20, 0.92);
+  --sl-color-hairline: rgba(139, 92, 246, 0.2);
+  --sl-color-hairline-shade: rgba(139, 92, 246, 0.3);
+  --sl-color-text-accent: #a78bfa;
+}
+
+:root[data-theme='light'] {
+  --sl-color-accent-low: #ede9fe;
+  --sl-color-accent: #8b5cf6;
+  --sl-color-accent-high: #5b21b6;
+
+  --sl-color-white: #1b1330;
+  --sl-color-gray-1: #2d2250;
+  --sl-color-gray-2: #463b69;
+  --sl-color-gray-3: #695f8b;
+  --sl-color-gray-4: #8f87ae;
+  --sl-color-gray-5: #cfc9df;
+  --sl-color-gray-6: #ece8f4;
+  --sl-color-gray-7: #f5f3fb;
+  --sl-color-black: #ffffff;
+
+  --sl-color-bg: #f4f1fa;
+  --sl-color-bg-nav: rgba(247, 244, 253, 0.9);
+  --sl-color-bg-sidebar: rgba(246, 242, 252, 0.92);
+  --sl-color-hairline: rgba(91, 33, 182, 0.12);
+  --sl-color-hairline-shade: rgba(91, 33, 182, 0.18);
+  --sl-color-text-accent: #7c3aed;
+}
+
+:root {
+  --sl-font: 'Space Grotesk', sans-serif;
+  --sl-font-system: 'Space Grotesk', sans-serif;
+  --sl-font-system-mono: 'JetBrains Mono', monospace;
+}
+
+::selection,
+::-moz-selection {
+  background: #8b5cf6;
+  color: #ffffff;
+}
+
+.page {
+  position: relative;
+}
+
+.page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-size: 28px 28px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.page::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(139, 92, 246, 0.12), transparent 38%),
+    radial-gradient(circle at 84% 0%, rgba(124, 58, 237, 0.14), transparent 34%);
+}
+
+:root[data-theme='light'] .page::before {
+  background-image:
+    linear-gradient(to right, rgba(64, 45, 128, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(64, 45, 128, 0.045) 1px, transparent 1px);
+}
+
+:root[data-theme='light'] .page::after {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(139, 92, 246, 0.08), transparent 42%),
+    radial-gradient(circle at 84% 0%, rgba(124, 58, 237, 0.06), transparent 38%);
+}
+
+.header {
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.22);
+}
+
+:root[data-theme='light'] .header {
+  border-bottom: 1px solid rgba(91, 33, 182, 0.15);
+}
+
+.site-title {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.sidebar-pane,
+.right-sidebar {
+  backdrop-filter: blur(8px);
+}
+
+.sidebar-content :global(a[aria-current='page']) {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.45), rgba(124, 58, 237, 0.22));
+  color: #ede9ff;
+  border: 1px solid rgba(139, 92, 246, 0.36);
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.08) inset;
+}
+
+:root[data-theme='light'] .sidebar-content :global(a[aria-current='page']) {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.14), rgba(124, 58, 237, 0.05));
+  color: #2f1b5a;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.content-panel {
+  border-top-color: rgba(139, 92, 246, 0.16);
+}
+
+.sl-markdown-content :is(h1, h2, h3) {
+  color: #f5f4ff;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+:root[data-theme='light'] .sl-markdown-content :is(h1, h2, h3) {
+  color: #1e1338;
+}
+
+.sl-markdown-content h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.sl-markdown-content :is(code, pre code) {
+  font-family: var(--sl-font-system-mono);
+}
+
+.sl-markdown-content pre {
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  background: #0b0a14;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.34);
+}
+
+:root[data-theme='light'] .sl-markdown-content pre {
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  background: #f4f1ff;
+  box-shadow: 0 12px 24px rgba(63, 24, 122, 0.12);
+}
+
+.right-sidebar-panel {
+  border-inline-start: 1px solid rgba(139, 92, 246, 0.16);
+}

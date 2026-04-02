@@ -9,7 +9,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Phant Docs',
-			customCss: ['./src/styles/tailwind.css'],
+			customCss: ['./src/styles/tailwind.css', './src/styles/docs-theme.css'],
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/phant-app/phant' }],
 			sidebar: [
 				{
