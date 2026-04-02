@@ -1,26 +1,61 @@
 <section id="roadmap" class="border-y border-[var(--phant-border)] bg-[#030305] py-24">
   <div class="wrap max-w-[960px]">
-    <h2 class="mb-3.5 border-l-2 border-[var(--phant-pink)] pl-3 font-['JetBrains_Mono'] text-[1.7rem] uppercase tracking-[-0.02em] text-[var(--phant-white)]">
+    <h2 class="mb-3.5 border-l-2 border-violet-500 pl-3 font-['JetBrains_Mono'] text-[1.7rem] uppercase tracking-[-0.02em] text-[var(--phant-white)]">
       Execution &gt; Roadmap
     </h2>
-    <p class="mb-[30px]">Phant is evolving quickly around practical Linux-native development needs.</p>
+    <p class="mb-[30px]">Phant evolves in clear version milestones around practical Linux-native developer workflows.</p>
 
     <div class="overflow-hidden rounded-lg border border-[var(--phant-border)] bg-[var(--phant-bg-soft)] font-['JetBrains_Mono']">
-      <div class="grid items-center border-b border-[var(--phant-bg-line)] min-[761px]:grid-cols-[120px_1fr_110px]">
-        <div class="px-4 py-3.5 font-bold uppercase text-[var(--phant-purple)]">Active</div>
-        <div class="px-4 py-3.5 text-white min-[761px]:border-l min-[761px]:border-[var(--phant-bg-line)]">Full GUI Dump Integration via Prepend</div>
+      <div class="grid items-center border-b border-[var(--phant-bg-line)] min-[761px]:grid-cols-[140px_1fr_110px]">
+        <div class="px-4 py-3.5 font-bold uppercase text-violet-400">1.0.0</div>
+        <div class="px-4 py-3.5 text-white min-[761px]:border-l min-[761px]:border-[var(--phant-bg-line)]">MVP - Phant Basic Release (Dumps, Services, PHP Manager, Sites)</div>
         <div class="px-4 py-3.5 text-xs text-green-500 min-[761px]:border-l min-[761px]:border-[var(--phant-bg-line)]">Released</div>
       </div>
-      <div class="grid items-center border-b border-[var(--phant-bg-line)] bg-[#0c0c14] min-[761px]:grid-cols-[120px_1fr_110px]">
-        <div class="px-4 py-3.5 font-bold text-white">Q3 2026</div>
-        <div class="px-4 py-3.5 min-[761px]:border-l min-[761px]:border-[var(--phant-bg-line)]">Log Monitoring Engine implementation</div>
+      <div class="grid items-center border-b border-[var(--phant-bg-line)] bg-[#0c0c14] min-[761px]:grid-cols-[140px_1fr_110px]">
+        <div class="px-4 py-3.5 font-bold text-white">2.0.0</div>
+        <div class="px-4 py-3.5 min-[761px]:border-l min-[761px]:border-[var(--phant-bg-line)]">Mails: capture, read, and list local development emails.</div>
         <div class="px-4 py-3.5 text-xs text-amber-500 min-[761px]:border-l min-[761px]:border-[var(--phant-bg-line)]">Building</div>
       </div>
-      <div class="grid items-center bg-[#0c0c14] min-[761px]:grid-cols-[120px_1fr_110px]">
-        <div class="px-4 py-3.5 font-bold text-[var(--phant-muted)]">Q4 2026</div>
-        <div class="px-4 py-3.5 text-[var(--phant-muted)] min-[761px]:border-l min-[761px]:border-[var(--phant-bg-line)]">Task and Queue Dashboard for Workers</div>
+      <div class="grid items-center border-b border-[var(--phant-bg-line)] bg-[#0c0c14] min-[761px]:grid-cols-[140px_1fr_110px]">
+        <div class="px-4 py-3.5 font-bold text-white">2.0.0</div>
+        <div class="px-4 py-3.5 min-[761px]:border-l min-[761px]:border-[var(--phant-bg-line)]">Exceptions: capture and log application exceptions in one timeline.</div>
+        <div class="px-4 py-3.5 text-xs text-amber-500 min-[761px]:border-l min-[761px]:border-[var(--phant-bg-line)]">Planned</div>
+      </div>
+      <div class="grid items-center border-b border-[var(--phant-bg-line)] bg-[#0c0c14] min-[761px]:grid-cols-[140px_1fr_110px]">
+        <div class="px-4 py-3.5 font-bold text-white">2.0.0</div>
+        <div class="px-4 py-3.5 min-[761px]:border-l min-[761px]:border-[var(--phant-bg-line)]">Windows: first stable Windows compatibility release.</div>
+        <div class="px-4 py-3.5 text-xs text-amber-500 min-[761px]:border-l min-[761px]:border-[var(--phant-bg-line)]">Planned</div>
+      </div>
+      <div class="grid items-center bg-[#0c0c14] min-[761px]:grid-cols-[140px_1fr_110px]">
+        <div class="px-4 py-3.5 font-bold text-white">2.0.0</div>
+        <div class="px-4 py-3.5 min-[761px]:border-l min-[761px]:border-[var(--phant-bg-line)]">Skills Analyzer: analyze project stack and suggest setup improvements.</div>
         <div class="px-4 py-3.5 text-xs text-[var(--phant-muted)] min-[761px]:border-l min-[761px]:border-[var(--phant-bg-line)]">Pending</div>
       </div>
     </div>
+
+    <aside class="mt-8 rounded-lg border border-[var(--phant-border)] bg-[#08080f] p-5 min-[761px]:p-6">
+      <h3 class="m-0 text-[1.25rem] font-extrabold text-[var(--phant-white)]">Is there a feature you would like to see in Phant?</h3>
+      <p class="mt-2 mb-4 text-[var(--phant-text)]">
+        Your workflow matters. Share your idea, vote on requests, and help shape what lands in upcoming releases.
+      </p>
+      <div class="flex flex-wrap gap-2.5">
+        <a
+          href="https://github.com/phant-app/phant/issues/new"
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center justify-center rounded-md border border-violet-500 bg-violet-600 px-4 py-2.5 font-['JetBrains_Mono'] text-[0.68rem] uppercase tracking-[0.12em] text-white no-underline transition hover:bg-violet-500"
+        >
+          Suggest a Feature
+        </a>
+        <a
+          href="https://github.com/phant-app/phant/issues"
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center justify-center rounded-md border border-[var(--phant-border)] bg-[#0c0c12] px-4 py-2.5 font-['JetBrains_Mono'] text-[0.68rem] uppercase tracking-[0.12em] text-white no-underline transition hover:border-violet-400"
+        >
+          Browse Requests
+        </a>
+      </div>
+    </aside>
   </div>
 </section>
