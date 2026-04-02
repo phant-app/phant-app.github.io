@@ -11,12 +11,14 @@ const capabilities = [
     title: "PHP Manager",
     subtitle: "Runtime Switcher",
     description:
-      "Switch PHP versions with confidence per project. Keep CLI/runtime context visible so teams avoid version drift.",
+      "Install and switch PHP versions from your Linux package manager while keeping CLI/runtime context visible per project.",
     bullets: [
-      "See installed versions and current active runtime instantly.",
-      "Switch quickly for each project workflow.",
+      "Tune PHP and PHP-FPM configuration parameters without leaving the app.",
+      "Enable or disable extensions depending on project needs.",
       "Reduce environment mismatch before debugging starts.",
     ],
+    officialSourceLabel: "Official PHP install guide",
+    officialSourceHref: "https://www.php.net/manual/en/install.unix.php",
     image: phpManagerImage,
     alt: "Phant PHP manager screen showing installed versions and switch actions",
   },
@@ -39,11 +41,11 @@ const capabilities = [
     title: "Dumps",
     subtitle: "Live Inspector",
     description:
-      "Capture dump() and dd() output in real-time in a native panel, so data inspection stays focused and readable.",
+      "Capture dump() and dd() output from terminal commands, local sites, and Tinker in one native panel for faster debugging.",
     bullets: [
-      "Structured output rendered in an app-native view.",
-      "No need to hunt through browser responses.",
-      "Built for fast iteration while coding.",
+      "Read structured output in a focused app-native view.",
+      "Trace values across CLI, browser routes, and Tinker sessions.",
+      "Especially helpful when debugging complex flows.",
     ],
     image: dumpsImage,
     alt: "Phant Dumps screen showing live dump and dd output",
@@ -102,6 +104,22 @@ const capabilities = [
               </div>
 
               <p class="mb-4 text-[0.96rem] leading-[1.7] text-[var(--phant-text)]">{capability.description}</p>
+
+              {
+                capability.officialSourceHref && (
+                  <p class="mb-4 font-['JetBrains_Mono'] text-[0.68rem] uppercase tracking-[0.08em] text-[#9f9fb0]">
+                    Official source: {" "}
+                    <a
+                      href={capability.officialSourceHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      class="text-violet-300 no-underline transition hover:text-violet-200"
+                    >
+                      {capability.officialSourceLabel}
+                    </a>
+                  </p>
+                )
+              }
 
               <ul class="m-0 list-disc space-y-1.5 pl-5 text-[0.9rem] leading-[1.65] text-[#b8b8c8]">
                 {capability.bullets.map((bullet) => <li>{bullet}</li>)}
