@@ -1,51 +1,69 @@
 ---
+import { Image } from "astro:assets";
 import LinuxIcon from "../icons/LinuxIcon.astro";
 import MacIcon from "../icons/MacIcon.astro";
 import WindowsIcon from "../icons/WindowsIcon.astro";
+import sitesImage from "../../assets/sites.png";
 ---
 
 <main class="relative border-b border-[#111115] py-21 pb-24" id="top">
   <div class="pointer-events-none absolute top-[10%] right-[12%] h-160 w-160 rounded-full bg-[rgba(88,28,135,0.12)] blur-[100px]"></div>
   <div class="pointer-events-none absolute bottom-[10%] left-[6%] h-160 w-160 rounded-full bg-[rgba(244,114,182,0.08)] blur-[100px]"></div>
   <div class="wrap">
-    <div class="mb-5.5 inline-flex items-center gap-2 rounded border border-(--phant-border) bg-[#1a1a24] px-2.5 py-1.5 font-['JetBrains_Mono'] text-[10px] uppercase tracking-[0.2em]">
-      <span class="inline-block h-1.5 w-1.5 rounded-full bg-(--phant-green) animate-pulse"></span>
-      Active
-    </div>
-    <h1 class="mb-5.5 text-[clamp(2.5rem,8vw,5.6rem)] leading-[0.95] tracking-[-0.04em] text-(--phant-white) font-extrabold">
-      PHP Development Environment
-    </h1>
-    <p class="mb-8.5 max-w-220 border-l-2 border-(--phant-pink) py-1.5 pl-5 text-[1.05rem] leading-[1.75]">
-      <strong class="text-white">&lt;?Phant&gt;</strong> is the desktop toolkit for PHP and Laravel teams. Manage sites, switch PHP versions,
-      monitor services, and inspect dumps in one native app built for fast daily development. Yes, without customized PHP binaries.
-    </p>
-    <div class="mb-8 flex items-center gap-4 font-['JetBrains_Mono'] text-[11px] uppercase tracking-[0.16em] text-(--phant-text)">
-      <span>Available OS</span>
-      <LinuxIcon class="phant-linux-icon size-6" />
-      <WindowsIcon class="size-6" />
-      <MacIcon class="size-6" />
-    </div>
-    <div class="flex flex-wrap gap-3">
-      <a
-        href="#get-app"
-        class="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2.5 font-['JetBrains_Mono'] text-[0.7rem] font-bold uppercase tracking-widest text-(--phant-black) no-underline transition hover:bg-(--phant-purple) hover:text-white"
-      >
-        Download - $9.99
-      </a>
-      <a
-        href="https://github.com/phant-app/phant"
-        target="_blank"
-        rel="noreferrer"
-        class="inline-flex items-center justify-center rounded-md border border-(--phant-border) bg-[#0c0c12] px-4 py-2.5 font-['JetBrains_Mono'] text-[0.7rem] uppercase tracking-widest text-white no-underline transition hover:border-(--phant-purple)"
-      >
-        Source Code
-      </a>
-      <a
-        href="/guides/example"
-        class="inline-flex items-center px-5 py-3.5 font-['JetBrains_Mono'] text-xs uppercase tracking-[0.16em] text-(--phant-text) no-underline transition hover:text-(--phant-pink) hover:drop-shadow-[0_0_15px_rgba(244,114,182,0.4)]"
-      >
-        Docs -&gt;
-      </a>
+    <div class="grid gap-10 min-[1100px]:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] min-[1100px]:items-start">
+      <div>
+        <div class="mb-5.5 inline-flex items-center gap-2 rounded border border-(--phant-border) bg-[#1a1a24] px-2.5 py-1.5 font-['JetBrains_Mono'] text-[10px] uppercase tracking-[0.2em]">
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-(--phant-green) animate-pulse"></span>
+          Active
+        </div>
+        <h1 class="mb-5.5 text-[clamp(2.5rem,8vw,5.6rem)] leading-[0.95] tracking-[-0.04em] text-(--phant-white) font-extrabold">
+          PHP Development Environment
+        </h1>
+        <p class="mb-8.5 max-w-220 border-l-2 border-violet-500 py-1.5 pl-5 text-[1.05rem] leading-[1.75]">
+          <strong class="text-white">&lt;?Phant&gt;</strong> is the desktop toolkit for PHP and Laravel teams. Manage sites, switch PHP versions,
+          monitor services, and inspect dumps in one native app built for fast daily development. Yes, without customized PHP binaries.
+        </p>
+        <div class="mb-8 flex items-center gap-4 font-['JetBrains_Mono'] text-[11px] uppercase tracking-[0.16em] text-(--phant-text)">
+          <span>Available OS</span>
+          <LinuxIcon class="phant-linux-icon size-6" />
+          <WindowsIcon class="size-6" />
+          <MacIcon class="size-6" />
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="#get-app"
+            class="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2.5 font-['JetBrains_Mono'] text-[0.7rem] font-bold uppercase tracking-widest text-(--phant-black) no-underline transition hover:bg-violet-600 hover:text-white"
+          >
+            Download - $9.99
+          </a>
+          <a
+            href="https://github.com/phant-app/phant"
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center justify-center rounded-md border border-(--phant-border) bg-[#0c0c12] px-4 py-2.5 font-['JetBrains_Mono'] text-[0.7rem] uppercase tracking-widest text-white no-underline transition hover:border-violet-500"
+          >
+            Source Code
+          </a>
+          <a
+            href="/guides/example"
+            class="inline-flex items-center px-5 py-3.5 font-['JetBrains_Mono'] text-xs uppercase tracking-[0.16em] text-(--phant-text) no-underline transition hover:text-violet-400 hover:drop-shadow-[0_0_15px_rgba(139,92,246,0.45)]"
+          >
+            Docs -&gt;
+          </a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <p class="mb-3 font-['JetBrains_Mono'] text-[10px] uppercase tracking-[0.18em] text-[#9a9aaa]">Product Preview</p>
+        <div class="rounded-xl border border-[var(--phant-border)] bg-[#090912] p-2 shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+          <Image
+            src={sitesImage}
+            alt="Phant sites manager view showing linked local development domains"
+            class="h-auto w-full rounded-md border border-[#1c1c28]"
+            loading="eager"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </main>

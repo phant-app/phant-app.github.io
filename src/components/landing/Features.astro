@@ -1,3 +1,11 @@
+---
+import { Image } from "astro:assets";
+import phpManagerImage from "../../assets/php-manager.png";
+import sitesImage from "../../assets/sites.png";
+import dumpsImage from "../../assets/dumps.png";
+import servicesImage from "../../assets/services.png";
+---
+
 <section id="features" class="py-24">
   <div class="wrap">
     <div class="mb-11 flex items-baseline gap-3.5 border-b border-[var(--phant-border)] pb-3.5">
@@ -16,6 +24,9 @@
           <span class="text-right text-[0.6rem] uppercase tracking-[0.08em] text-[var(--phant-muted)]">runtime switcher</span>
         </div>
         <div class="flex h-full flex-col p-[18px]">
+          <div class="mb-4 overflow-hidden rounded-md border border-[var(--phant-border)] bg-[#090912]">
+            <Image src={phpManagerImage} alt="Phant PHP Manager screen" class="h-auto w-full" />
+          </div>
           <p class="mb-4 text-[0.96rem] leading-[1.7]">
             Move between PHP versions with confidence per project. Validate active runtime instantly and reduce
             environment drift before it turns into team-wide debugging noise.
@@ -33,6 +44,9 @@
           <span class="text-right text-[0.6rem] uppercase tracking-[0.08em] text-[var(--phant-muted)]">cpriego/valet-linux</span>
         </div>
         <div class="flex h-full flex-col p-[18px]">
+          <div class="mb-4 overflow-hidden rounded-md border border-[var(--phant-border)] bg-[#090912]">
+            <Image src={sitesImage} alt="Phant Sites screen with linked and parked local domains" class="h-auto w-full" />
+          </div>
           <p class="mb-4 text-[0.96rem] leading-[1.7]">
             Track linked and parked projects in one place. Switch PHP versions per app, assign local TLS, and keep
             runtime context visible without bouncing between shell scripts.
@@ -50,6 +64,9 @@
           <span class="text-right text-[0.6rem] uppercase tracking-[0.08em] text-[var(--phant-muted)]">prepend hook render</span>
         </div>
         <div class="flex h-full flex-col p-[18px]">
+          <div class="mb-4 overflow-hidden rounded-md border border-[var(--phant-border)] bg-[#090912]">
+            <Image src={dumpsImage} alt="Phant Dumps screen displaying dump and dd output" class="h-auto w-full" />
+          </div>
           <p class="mb-4 text-[0.96rem] leading-[1.7]">
             Capture dump() and dd() output live through prepend hooks. Inspect structured payloads in a native panel
             instead of hunting through browser responses.
@@ -69,6 +86,9 @@
           <span class="text-right text-[0.6rem] uppercase tracking-[0.08em] text-[var(--phant-muted)]">daemon state</span>
         </div>
         <div class="flex h-full flex-col p-[18px]">
+          <div class="mb-4 overflow-hidden rounded-md border border-[var(--phant-border)] bg-[#090912]">
+            <Image src={servicesImage} alt="Phant Services screen with local service status" class="h-auto w-full" />
+          </div>
           <p class="mb-4 text-[0.96rem] leading-[1.7]">
             See service state at a glance. Confirm queues, databases, and cache backends instantly, so your local
             stack matches the environment you think is running.
