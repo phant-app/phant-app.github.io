@@ -5,14 +5,14 @@ import sitesImage from "../../assets/sites.png";
 import dumpsImage from "../../assets/dumps.png";
 import servicesImage from "../../assets/services.png";
 
-const capabilities = [
+const capabilities =[
   {
     key: "php",
     title: "PHP Manager",
     subtitle: "Runtime Switcher",
     description:
       "Install and switch PHP versions from your Linux package manager while keeping CLI/runtime context visible per project.",
-    bullets: [
+    bullets:[
       "Tune PHP and PHP-FPM configuration parameters without leaving the app.",
       "Enable or disable extensions depending on project needs.",
       "Reduce environment mismatch before debugging starts.",
@@ -28,7 +28,7 @@ const capabilities = [
     subtitle: "Valet Integration",
     description:
       "Manage linked and parked local domains in one place. Keep domain, PHP version, and SSL context easy to verify.",
-    bullets: [
+    bullets:[
       "Track linked and parked projects at a glance.",
       "See assigned PHP versions for each local domain.",
       "Reduce context switching between terminal and browser.",
@@ -42,7 +42,7 @@ const capabilities = [
     subtitle: "Live Inspector",
     description:
       "Capture dump() and dd() output from terminal commands, local sites, and Tinker in one native panel for faster debugging.",
-    bullets: [
+    bullets:[
       "Read structured output in a focused app-native view.",
       "Trace values across CLI, browser routes, and Tinker sessions.",
       "Especially helpful when debugging complex flows.",
@@ -56,7 +56,7 @@ const capabilities = [
     subtitle: "Daemon State",
     description:
       "Confirm local service health instantly for queues, databases, and cache layers so your environment matches your intent.",
-    bullets: [
+    bullets:[
       "See service status in one unified panel.",
       "Validate ports and units quickly.",
       "Avoid silent local infra issues during development.",
@@ -67,66 +67,127 @@ const capabilities = [
 ];
 ---
 
-<section id="features" class="py-24">
-  <div class="wrap">
-    <div class="mb-11 flex flex-wrap items-baseline gap-3.5 border-b border-[var(--phant-border)] pb-3.5">
-      <h2 class="m-0 text-[clamp(1.7rem,5vw,2.4rem)] uppercase tracking-[-0.01em] text-[var(--phant-white)]">
-        Capability <span class="text-[var(--phant-purple)] drop-shadow-[0_0_15px_rgba(139,92,246,0.4)]">Matrix</span>
+<section id="features" class="py-24 relative overflow-hidden">
+  {/* Optional Subtle Background Glow behind the section */}
+  <div class="pointer-events-none absolute left-1/2 top-0 -z-10 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-[var(--phant-purple)] opacity-[0.03] blur-[100px]"></div>
+
+  <div class="wrap mx-auto max-w-7xl px-1 lg:px-6">
+    {/* Centered Modern Header */}
+    <div class="mb-16 flex flex-col items-center text-center">
+      <div class="mb-5 inline-flex items-center gap-2.5 rounded-full border border-[var(--phant-purple)]/30 bg-[var(--phant-purple)]/10 px-4 py-1.5">
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet-400 opacity-75"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-violet-500"></span>
+        </span>
+        <small class="font-['JetBrains_Mono'] text-[0.65rem] font-bold uppercase tracking-[0.2em] text-violet-300">
+          Product Storyboard
+        </small>
+      </div>
+      <h2 class="m-0 text-[clamp(2.2rem,5vw,3.5rem)] font-extrabold tracking-tight text-[var(--phant-white)]">
+        Capability <span class="bg-gradient-to-r from-[var(--phant-purple)] to-fuchsia-400 bg-clip-text text-transparent">Matrix</span>
       </h2>
-      <small class="font-['JetBrains_Mono'] text-[0.65rem] uppercase tracking-[0.14em] text-[var(--phant-text)]">
-        Product Storyboard
-      </small>
     </div>
 
-    <div class="space-y-8 min-[980px]:space-y-10">
+    {/* Bento Box Grid */}
+    <div class="grid grid-cols-1 gap-6 min-[980px]:grid-cols-2 min-[980px]:gap-8">
       {
-        capabilities.map((capability, index) => (
-          <article class="group grid overflow-hidden rounded-xl border border-[var(--phant-border)] bg-[var(--phant-bg-soft)] shadow-[0_18px_45px_rgba(0,0,0,0.28)] min-[980px]:grid-cols-2">
-            <div
+        capabilities.map((capability, index) => {
+          // Dynamic Layout Rules: 
+          // Item 0: Spans full width (Row 1)
+          // Item 1 & 2: Span half width (Row 2)
+          // Item 3: Spans full width, reversed (Row 3)
+          const isFullWidth = index === 0 || index === 3;
+          const isReversed = index === 3;
+
+          return (
+            <article
               class:list={[
-                "relative overflow-hidden border-b border-[var(--phant-border)] bg-[#06060d] min-[980px]:border-b-0",
-                index < 2 ? "min-[980px]:order-2 min-[980px]:border-l" : "min-[980px]:order-1 min-[980px]:border-r",
+                "group relative flex flex-col overflow-hidden rounded-[2rem] border border-[var(--phant-border)] bg-[#09090e] shadow-xl transition-all duration-500 hover:border-[var(--phant-purple)]/50",
+                isFullWidth ? "min-[980px]:col-span-2 min-[980px]:flex-row" : "min-[980px]:col-span-1",
+                isReversed ? "min-[980px]:flex-row-reverse" : "",
               ]}
             >
-              <Image
-                src={capability.image}
-                alt={capability.alt}
-                class="h-[250px] w-full object-cover bg-[#05050a] p-2 transition duration-500 group-hover:scale-110 min-[980px]:h-[320px]"
-              />
-              <div class="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#06060d] to-transparent"></div>
-            </div>
-            <div class:list={["flex h-full flex-col p-6 min-[980px]:p-8", index < 2 ? "min-[980px]:order-1" : "min-[980px]:order-2"]}>
-              <div class="mb-3 flex items-start justify-between gap-3">
-                <h3 class="m-0 text-[1.55rem] font-extrabold uppercase tracking-[-0.01em] text-[var(--phant-white)] min-[980px]:text-[1.75rem]">{capability.title}</h3>
-                <span class="rounded border border-[#3a2f56] bg-[#151025] px-2 py-1 font-['JetBrains_Mono'] text-[0.6rem] uppercase tracking-[0.1em] text-violet-300">
-                  {capability.subtitle}
-                </span>
-              </div>
+              {/* Internal Hover Gradient */}
+              <div class="absolute inset-0 z-0 bg-gradient-to-br from-[var(--phant-purple)]/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-              <p class="mb-4 text-[0.96rem] leading-[1.7] text-[var(--phant-text)]">{capability.description}</p>
+              {/* Text Content */}
+              <div
+                class:list={[
+                  "relative z-10 flex flex-col justify-center px-4 py-5 lg:p-8 min-[980px]:p-12",
+                  isFullWidth ? "min-[980px]:w-[45%]" : "flex-grow",
+                ]}
+              >
+                <div class="mb-4 flex items-center gap-3">
+                  <h3 class="m-0 text-2xl font-bold tracking-tight text-[var(--phant-white)] min-[980px]:text-3xl">
+                    {capability.title}
+                  </h3>
+                </div>
 
-              {
-                capability.officialSourceHref && (
-                  <p class="mb-4 font-['JetBrains_Mono'] text-[0.68rem] uppercase tracking-[0.08em] text-[#9f9fb0]">
-                    Official source: {" "}
+                <p class="mb-6 font-['JetBrains_Mono'] text-xs font-semibold uppercase tracking-widest text-violet-400">
+                  // {capability.subtitle}
+                </p>
+
+                <p class="mb-8 text-base leading-relaxed text-[#9f9fb0] text-pretty">
+                  {capability.description}
+                </p>
+
+                <ul class="mb-8 flex flex-col gap-3 pl-0 text-[0.9rem] leading-relaxed text-[#b8b8c8]">
+                  {capability.bullets.map((bullet) => (
+                    <li class="flex items-start gap-3">
+                      <span class="mt-[2px] select-none font-['JetBrains_Mono'] text-[0.8rem] font-bold text-[var(--phant-purple)]">
+                        {">"}
+                      </span>
+                      <span class="opacity-90">{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {capability.officialSourceHref && (
+                  <div class="mt-auto">
                     <a
                       href={capability.officialSourceHref}
                       target="_blank"
                       rel="noreferrer"
-                      class="text-violet-300 no-underline transition hover:text-violet-200"
+                      class="inline-flex items-center gap-2 rounded-full border border-[var(--phant-border)] bg-white/5 px-4 py-2 font-['JetBrains_Mono'] text-[0.65rem] font-medium uppercase tracking-wider text-violet-200 transition-all hover:bg-[var(--phant-purple)] hover:text-white"
                     >
                       {capability.officialSourceLabel}
+                      <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
                     </a>
-                  </p>
-                )
-              }
+                  </div>
+                )}
+              </div>
 
-              <ul class="m-0 list-disc space-y-1.5 pl-5 text-[0.9rem] leading-[1.65] text-[#b8b8c8]">
-                {capability.bullets.map((bullet) => <li>{bullet}</li>)}
-              </ul>
-            </div>
-          </article>
-        ))
+              {/* Image / Application Mockup Wrapper */}
+              <div
+                class:list={[
+                  "relative z-10 flex items-center justify-center p-6 pt-0 min-[980px]:p-8",
+                  isFullWidth ? "min-[980px]:w-[55%] min-[980px]:pt-8" : "",
+                ]}
+              >
+                {/* Simulated OS Window */}
+                <div class="w-full overflow-hidden rounded-xl border border-[var(--phant-border)]/60 bg-[#040406] shadow-2xl transition-transform duration-700 group-hover:scale-[1.03]">
+                  {/* Window Header Bar */}
+                  <div class="flex h-7 items-center gap-1.5 border-b border-[var(--phant-border)]/40 bg-[#0d0d12] px-3">
+                    <div class="h-2 w-2 rounded-full border border-[#ef4444]/20 bg-[#ef4444]/80"></div>
+                    <div class="h-2 w-2 rounded-full border border-[#eab308]/20 bg-[#eab308]/80"></div>
+                    <div class="h-2 w-2 rounded-full border border-[#22c55e]/20 bg-[#22c55e]/80"></div>
+                  </div>
+                  {/* The actual image */}
+                  <div class="p-1.5 min-[980px]:p-2.5">
+                    <Image
+                      src={capability.image}
+                      alt={capability.alt}
+                      class="h-auto w-full rounded border border-[var(--phant-border)]/30 object-cover object-top"
+                    />
+                  </div>
+                </div>
+              </div>
+            </article>
+          );
+        })
       }
     </div>
   </div>
