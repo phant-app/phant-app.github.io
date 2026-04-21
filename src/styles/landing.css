@@ -9,7 +9,7 @@
   --phant-text: #a1a1aa;
   --phant-muted: #626270;
   --phant-white: #ffffff;
-  --phant-purple: #c084fc;
+  --phant-purple: var(--color-purple-600);
   --phant-pink: #f472b6;
   --phant-green: #22c55e;
   --phant-black: #050508;

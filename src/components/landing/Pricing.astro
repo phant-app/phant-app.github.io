@@ -37,14 +37,17 @@
           <li>Direct support for ongoing maintenance and updates.</li>
         </ul>
         <div class="mt-auto space-y-2">
-        <a
-          href="https://github.com/phant-app/phant/releases"
-          target="_blank"
-          rel="noreferrer"
-          class="inline-flex w-full items-center justify-between rounded-md border border-violet-500/70 bg-violet-600/90 px-4 py-[10px] font-['JetBrains_Mono'] text-[0.7rem] uppercase tracking-[0.1em] text-white no-underline transition hover:bg-violet-500 hover:border-violet-400"
-        >
-          Download Releases <span class="text-violet-100">-&gt;</span>
-        </a>
+          <div class="payhip-wrapper">
+            <a
+              href="https://payhip.com/b/ygTYq"
+              class="payhip-buy-button"
+              data-product="ygTYq"
+              aria-label="Download"
+            >
+              <span class="payhip-label">Purchase License (Lifetime Access)</span>
+              <span class="payhip-arrow">-&gt;</span>
+            </a>
+          </div>
           <p class="rounded-md border border-violet-700/60 bg-violet-950/35 px-3 py-2 font-['JetBrains_Mono'] text-[0.68rem] uppercase tracking-[0.08em] text-violet-200">
             OS availability: Linux (current)
           </p>
@@ -53,3 +56,66 @@
     </div>
   </div>
 </section>
+
+<script type="text/javascript" src="https://payhip.com/payhip.js"></script>
+
+<style>
+  .payhip-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 0.375rem;
+  }
+
+  .payhip-wrapper > a.payhip-buy-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 16px 12px !important;
+    border-radius: 0.375rem;
+    border: 1px solid rgba(139,92,246,0.7) !important;
+    background: rgba(124,58,237,0.9) !important;
+    color: #fff !important;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    font-size: 0.7rem !important;
+    line-height: 1;
+    transition: background-color 150ms ease, border-color 150ms ease;
+  }
+
+  .payhip-wrapper > a.payhip-buy-button::after {
+    content: '->';
+    margin-left: auto;
+    color: rgb(237,233,254);
+  }
+
+  .payhip-wrapper > a.payhip-buy-button:hover {
+    background: rgb(139,92,246) !important;
+    border-color: rgb(167,139,250) !important;
+  }
+
+  .payhip-wrapper .payhip-buy-button .payhip-label {
+    display: inline-block;
+    margin-right: auto;
+  }
+
+  .payhip-wrapper .payhip-buy-button .payhip-arrow {
+    display: none;
+    color: rgb(237,233,254);
+    opacity: 1;
+  }
+  /* Target common injected nodes (iframe or widget container) and make them fill the wrapper */
+  .payhip-wrapper iframe,
+  .payhip-wrapper .payhip-widget {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: inherit !important;
+    background: transparent !important;
+  }
+</style>
