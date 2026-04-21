@@ -9,14 +9,17 @@ import sitesImage from "../../assets/sites.png";
 <main class="relative border-b border-[#111115] py-21 pb-24" id="top">
   <div class="pointer-events-none absolute top-[10%] right-[12%] h-160 w-160 rounded-full bg-[rgba(88,28,135,0.12)] blur-[100px]"></div>
   <div class="pointer-events-none absolute bottom-[10%] left-[6%] h-160 w-160 rounded-full bg-[rgba(139,92,246,0.1)] blur-[100px]"></div>
+  
   <div class="wrap">
     <div class="grid gap-10 min-[1100px]:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] min-[1100px]:items-start">
+      
+      {/* Left Content */}
       <div>
         <div class="mb-5.5 inline-flex items-center gap-2 rounded border border-(--phant-border) bg-[#1a1a24] px-2.5 py-1.5 font-['JetBrains_Mono'] text-[10px] uppercase tracking-[0.2em]">
-          <span class="inline-block h-1.5 w-1.5 rounded-full bg-(--phant-green) animate-pulse"></span>
+          <span class="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-(--phant-green)"></span>
           Active
         </div>
-        <h1 class="mb-5.5 text-[clamp(2.5rem,8vw,5.6rem)] leading-[0.95] tracking-[-0.04em] text-(--phant-white) font-extrabold">
+        <h1 class="mb-5.5 text-[clamp(2.5rem,8vw,5.6rem)] font-extrabold leading-[0.95] tracking-[-0.04em] text-(--phant-white)">
           PHP Development Environment
         </h1>
         <p class="mb-8.5 max-w-220 border-l-2 border-violet-500 py-1.5 pl-5 text-[1.05rem] leading-[1.75]">
@@ -53,17 +56,77 @@ import sitesImage from "../../assets/sites.png";
         </div>
       </div>
 
+      {/* Right Content: Product Preview */}
       <div class="relative">
         <p class="mb-3 font-['JetBrains_Mono'] text-[10px] uppercase tracking-[0.18em] text-[#9a9aaa]">Product Preview</p>
-        <div class="rounded-xl border border-[var(--phant-border)] bg-[#090912] p-2 shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+        
+        {/* Added "group" and "overflow-hidden" to keep the animation contained */}
+        <div class="group relative overflow-hidden rounded-xl border border-(--phant-border) bg-[#090912] p-2 shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+          
           <Image
             src={sitesImage}
             alt="Phant sites manager view showing linked local development domains"
             class="h-auto w-full rounded-md border border-[#1c1c28]"
             loading="eager"
           />
+
+          {/* The Walking Phant Easter Egg */}
+          <div class="pointer-events-none absolute bottom-[12px] left-0 z-10 w-full animate-walk-across group-hover:[animation-play-state:paused]">
+            <div class="inline-block origin-bottom scale-[1.2] animate-waddle group-hover:[animation-play-state:paused]">
+              <svg 
+                width="22" 
+                height="22" 
+                viewBox="0 0 22 22" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                class="drop-shadow-[0_0_5px_rgba(152,16,250,0.8)]"
+              >
+                <path d="M7.33333 22H12.8333V16.5H14.6667V22H20.1667V9.16668H18.3333V20.1667H16.5V14.6667H11V20.1667H9.16667V14.6667H7.33333V22ZM1.83333 20.1667H5.5V16.5H3.66667V18.3333H1.83333V20.1667ZM0 18.3333H1.83333V7.33334H0V18.3333ZM3.66667 14.6667H7.33333V12.8333H3.66667V14.6667ZM3.66667 11H5.5V9.16668H3.66667V11ZM1.83333 7.33334H3.66667V5.50001H1.83333V7.33334ZM5.5 7.33334H7.33333V3.66668H3.66667V5.50001H5.5V7.33334ZM7.33333 11H11V9.16668H9.16667V7.33334H7.33333V11ZM12.8333 5.50001H11V9.16668H18.3333V7.33334H12.8333V5.50001ZM12.8333 5.50001H14.6667V1.83334H7.33333V3.66668H12.8333V5.50001Z" fill="#9810FA"/>
+              </svg>
+            </div>
+          </div>
+
         </div>
       </div>
+
     </div>
   </div>
 </main>
+
+<style>
+  /* Moves the container horizontally across the screen */
+  @keyframes walk-across {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(calc(-100% + 50px));
+    }
+  }
+
+  /* Simulates a pixel-art character bobbing and rocking */
+  @keyframes waddle {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-4px) rotate(-6deg);
+    }
+    50% {
+      transform: translateY(0) rotate(0deg);
+    }
+    75% {
+      transform: translateY(-4px) rotate(6deg);
+    }
+  }
+
+  .animate-walk-across {
+    /* 15 seconds makes it stroll leisurely. Change this to speed it up or slow it down */
+    animation: walk-across 18s linear infinite;
+  }
+
+  .animate-waddle {
+    /* 0.5s controls how fast its 'legs' move */
+    animation: waddle 0.5s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+  }
+</style>
