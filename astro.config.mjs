@@ -7,7 +7,7 @@ import umami from "@yeskunall/astro-umami";
 
 // https://astro.build/config
 export default defineConfig({
-	site: process.env.SITE_URL ?? 'http://localhost:4321',
+	site: process.env.SITE_URL ?? 'https://phant-app.github.io',
 	integrations: [
 		umami({ id: '25161f87-59c3-4c4b-a4f9-894a18cd5afd'}),
 		starlight({

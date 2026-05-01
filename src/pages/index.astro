@@ -1,6 +1,7 @@
 ---
-import '../styles/tailwind.css';
 import '../styles/landing.css';
+import BaseHead from '../components/BaseHead.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import Nav from '../components/landing/Nav.astro';
 import Hero from '../components/landing/Hero.astro';
 import Features from '../components/landing/Features.astro';
@@ -8,50 +9,23 @@ import Roadmap from '../components/landing/Roadmap.astro';
 import Pricing from '../components/landing/Pricing.astro';
 import Author from '../components/landing/Author.astro';
 import Footer from '../components/landing/Footer.astro';
+
+const pageTitle = "Phant — Local PHP & Laravel Development Toolkit for Linux";
 ---
 
 <html lang="en" class="scroll-smooth">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="alternate icon" type="image/png" sizes="32x32" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/manifest.webmanifest">
-    <link rel="canonical" href="https://phant-app.github.io/" />
-
-    <meta name="description" content="Phant — a lightweight local PHP & Laravel dev environment for Linux. Manage sites, switch PHP versions, inspect dumps, and run local services through an intuitive GUI." />
-    <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#0ea5a4" />
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Phant" />
-    <meta property="og:title" content="Phant — Local PHP & Laravel Development Toolkit for Linux" />
-    <meta property="og:description" content="Phant — a lightweight local PHP & Laravel dev environment for Linux. Manage sites, switch PHP versions, inspect dumps, and run local services through an intuitive GUI." />
-    <meta property="og:image" content="/phant-metaimage.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:url" content="https://phant-app.github.io/" />
-    <meta property="og:locale" content="en_US" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Phant — Local PHP & Laravel Development Toolkit for Linux" />
-    <meta name="twitter:description" content="Phant — a lightweight local PHP & Laravel dev environment for Linux. Manage sites, switch PHP versions, inspect dumps, and run local services through an intuitive GUI." />
-    <meta name="twitter:image" content="/phant-metaimage.jpg" />
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Phant",
-      "url": "https://phant-app.github.io/",
-      "description": "Phant — a lightweight local PHP & Laravel dev environment for Linux."
-    }
-    </script>
-
-    <title>Phant — Local PHP & Laravel Development Toolkit for Linux</title>
+    <BaseHead title={pageTitle} description={SITE_DESCRIPTION} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: SITE_TITLE,
+        url: new URL("/", Astro.site),
+        description: SITE_DESCRIPTION,
+      })}
+    />
   </head>
   <body>
     <div class="grid-bg"></div>
