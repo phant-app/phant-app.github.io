@@ -2,6 +2,10 @@
   "name": "phant-website",
   "type": "module",
   "version": "0.0.1",
+  "description": "Local PHP & Laravel dev toolkit for Linux — manage sites, switch PHP versions, inspect dumps, and run services locally.",
+  "homepage": "https://phant-app.github.io/",
+  "author": "Phant",
+  "keywords": ["php","laravel","local","development","tools","phant"],
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
