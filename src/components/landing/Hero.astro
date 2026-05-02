@@ -4,6 +4,12 @@ import LinuxIcon from "../icons/LinuxIcon.astro";
 import MacIcon from "../icons/MacIcon.astro";
 import WindowsIcon from "../icons/WindowsIcon.astro";
 import sitesImage from "../../assets/sites.png";
+
+interface Props {
+  version?: string;
+}
+
+const { version = "unknown" } = Astro.props;
 ---
 
 <main class="relative border-b border-[#111115] py-21 pb-24" id="top">
@@ -17,7 +23,7 @@ import sitesImage from "../../assets/sites.png";
       <div>
         <div class="mb-5.5 inline-flex items-center gap-2 rounded border border-(--phant-border) bg-[#1a1a24] px-2.5 py-1.5 font-['JetBrains_Mono'] text-[10px] uppercase tracking-[0.2em]">
           <span class="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-(--phant-green)"></span>
-          Active
+          Active • v{version}
         </div>
         <h1 class="mb-5.5 text-[clamp(2.5rem,8vw,5.6rem)] font-extrabold leading-[0.95] tracking-[-0.04em] text-(--phant-white)">
           PHP Development Environment
