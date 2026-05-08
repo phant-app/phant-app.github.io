@@ -1,6 +1,6 @@
 ---
 import '../styles/landing.css';
-import { readFile } from 'node:fs/promises';
+import updateManifest from '../data/update.json';
 import BaseHead from '../components/BaseHead.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import Nav from '../components/landing/Nav.astro';
@@ -12,17 +12,7 @@ import Author from '../components/landing/Author.astro';
 import Footer from '../components/landing/Footer.astro';
 
 const pageTitle = "Phant — Local PHP & Laravel Development Toolkit for Linux";
-const updateFile = new URL('../../public/update.json', import.meta.url);
-
-let currentVersion = 'unknown';
-
-try {
-  const updateRaw = await readFile(updateFile, 'utf-8');
-  const updateJson = JSON.parse(updateRaw);
-  if (typeof updateJson.version === 'string' && updateJson.version.length > 0) {
-    currentVersion = updateJson.version;
-  }
-} catch {}
+const currentVersion = typeof updateManifest.version === 'string' ? updateManifest.version : '';
 ---
 
 <html lang="en" class="scroll-smooth">
