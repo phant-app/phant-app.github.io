@@ -25,15 +25,20 @@ export default defineConfig({
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/phant-app/phant' }],
 			sidebar: [
 				{
+					label: 'Getting Started',
+					autogenerate: { directory: 'getting-started' },
+				},
+				{
 					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Quickstart on Linux', slug: 'guides/example' },
-					],
+					autogenerate: { directory: 'guides' },
 				},
 				{
 					label: 'Reference',
 					autogenerate: { directory: 'reference' },
+				},
+				{
+					label: 'Community',
+					autogenerate: { directory: 'community' },
 				},
 			],
 		}),
