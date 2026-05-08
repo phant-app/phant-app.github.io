@@ -103,6 +103,13 @@
   border-bottom: 1px solid rgba(139, 92, 246, 0.22);
 }
 
+@media (max-width: 71.999rem) {
+  .header,
+  mobile-starlight-toc nav {
+    background-color: var(--sl-color-bg);
+  }
+}
+
 :root[data-theme='light'] .header {
   border-bottom: 1px solid rgba(91, 33, 182, 0.15);
 }
