@@ -108,6 +108,15 @@
   mobile-starlight-toc nav {
     background-color: var(--sl-color-bg);
   }
+
+  .main-frame {
+    padding-top: var(--sl-nav-height);
+  }
+
+  mobile-starlight-toc nav {
+    position: sticky;
+    top: calc(var(--sl-nav-height) - 1px);
+  }
 }
 
 :root[data-theme='light'] .header {
